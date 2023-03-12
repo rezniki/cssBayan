@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    line-height: 1.2;
+    background-color: beige;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.bayan {
+    max-width: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bayan_item {
+    background-color: #353535;
+    color: white;
+    position: relative;
+    padding: 10px;
+}
+
+.bayan_title {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: #272727;
+    outline: none;
+    border-bottom: 1px, solid #f8f4f4;
+    cursor: pointer;
+    padding: 50px;
+    position: relative;
+    transition: 0.3s all;
+}
+
+.bayan_title:hover {
+    background-color: #111;
+}
+
+.bayan_title:active {
+    color: dodgerblue;
+}
+
+.bayan_title::after {
+    display: block;
+    content: "+";
+    font-size: 30px;
+    color: wheat;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s all;
+} 
+
+.bayan_item:not([open]):last-child .bayan_title {
+    border: none;
+}
+
+.bayan_item[open] .bayan_title::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.bayan_body {
+    padding: 20px;
+}
+
+.bayan_body img {
+    width: 100%;
+}
+
